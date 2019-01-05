@@ -149,8 +149,14 @@ $(document).ready(function(){
     }
   })  
 
-
-  productForm.submit(function(event){
+    // This is a change that I (Majid Bilal) propose which was originally proposed by "ryfi" an year ago
+    // changing the following line "productForm.submit(function(event){" to
+    // $(document).on("submit", ".form-product-ajax", function(event){
+    // this will enable handling of events genrated by newly created html, otherwise
+    // ajax will work only once.
+    
+  //productForm.submit(function(event){
+  $(document).on("submit", ".form-product-ajax", function(event){
       event.preventDefault();
       // console.log("Form is not sending")
       var thisForm = $(this)
